@@ -1,14 +1,20 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import logo from '../assets/Logo.png';
 import google from '../assets/google.png';
 import Btn from '../components/Btn';
 import InputField from '../components/inputField';
 import lottie from "lottie-web"
 import animation from "../assets/animation.json"
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
-export default function SignUp() {
+export default function SignUp({ setDataForm }) {
+    const navigate = useNavigate();
+    const [FirstName, setFirstName] = useState();
+    const [LastName, setLastName] = useState();
+    const [Email, setEmail] = useState();
+    const [Password, setPassword]  = useState();
+    const [VerifyPassword, setVerifyPassword] = useState();
     useEffect(() => {
         const instance = lottie.loadAnimation({
             container: document.querySelector(".animation .cont-anim"),
@@ -52,13 +58,22 @@ export default function SignUp() {
                 </div>
                 <form className='w-[89%] max-w-[25rem] mt-7 flex flex-col'>
                     <div className='grid grid-cols-2 gap-4'>
-                    <InputField name="FirstName" type="text"  />
-                    <InputField name="LastName" type="text"  />
+                    <InputField name="FirstName" type="text"  setInput={setFirstName} />
+                    <InputField name="LastName" type="text"  setInput={setLastName}/>
                     </div>
-                    <InputField name="Email" type="email"  />
-                    <InputField name="Password" type="password" />  
+                    <InputField name="Email" type="email" setInput={setEmail} />
+                    <InputField name="Password" type="password" setInput={setPassword} />  
                     <div className='flex justify-end text-white font-medium text-lg'>
-                        <Btn text="Sign" type="submit" />
+                        <Btn text="Sign" type="submit" handleSubmit={()=> {
+                            setDataForm({
+                                email: Email,
+                                first_name: FirstName,
+                                last_name: LastName,
+                                password: Password,
+                                confirmPassword: Password,
+                            })
+                            navigate("/SignUp/step1");
+                        }} />
                     </div>
                     <div className='w-[100%] h-1 bg-white ml-auto mr-auto mt-5'></div>
                     <div className='text-white font-medium text-lg ml-auto mr-auto mt-5 mb-10'>

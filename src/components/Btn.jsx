@@ -9,11 +9,10 @@ export default function Btn(props) {
             className={className}
             onClick={props.handleSubmit}
           />
-          
         );
     }
     return (
-        <button className={className} onClick={props.handleSubmit}        >
+        <button className={className} onClick={props.handleSubmit} >
             {props.text}
         </button>
     );
