@@ -14,7 +14,7 @@ function ChoiceBtn({ text, setSelected, selected, setDataForm, num, style, style
       document.querySelector(".btn-" + num).classList.toggle("outline")
       let result = "";
       document.querySelectorAll(".Grade-btn.outline").forEach((el) => {
-        result += el.dataset.grade + " /";
+        result += el.dataset.grade + " / ";
       })
       value[name] = result;
       setDataForm(value);
@@ -27,7 +27,7 @@ function ChoiceBtn({ text, setSelected, selected, setDataForm, num, style, style
   }
   return (
     <button onClick={handler} className={className} data-grade={grade}>
-        <img className={"absolute lg:left-11 left-9 lg:w-20 w-20 lg:h-20 h-20 top-1/2 -translate-y-1/2 max-[568px]:h-14 max-[568px]:w-14 " + styleImg} src={personne} alt="personne" />
+        <img className={"absolute lg:left-11 left-9 lg:w-20 w-20 lg:h-20 h-20 top-1/2 -translate-y-1/2 max-[568px]:h-14 max-[568px]:w-14" + styleImg} src={personne} alt="personne" />
         {text}
     </button>
   )

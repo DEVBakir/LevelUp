@@ -17,3 +17,11 @@
     position: absolute;
     top: 500px;
 }
+.checkedChoice {
+    background-color: #00333D;
+    color: white;
+}
+.checkedChoice img {
+    display: block;
+}
+

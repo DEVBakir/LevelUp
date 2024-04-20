@@ -9,7 +9,7 @@ function SignStep1({ setDataForm }) {
   const value = useContext(DataTest);
   const [selected, setSelected] = useState();
   const handlerNextBtn = () => {
-    navigate("/SignUp/step3")
+    navigate("/SignUp/step3-" + value.role);
     }
     return (
         <div className="container mx-auto py-12 px-5 relative">

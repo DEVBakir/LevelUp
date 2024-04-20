@@ -7,7 +7,8 @@ import { DataTest } from './context/Form';
 import SignStep1 from './pages/SignStep1';
 import SignStep2 from './pages/SignStep2';
 import { useState } from 'react';
-import SignStep3 from './pages/SignStep3';
+import SignStep3Teacher from './pages/SignStep3Teacher';
+import OtpValidation from './pages/OtpValidation';
 
 function App() {
   //Set & Update FormDataContext
@@ -36,10 +37,20 @@ function App() {
               <SignStep2 setDataForm={setDataForm} />
             </DataTest.Provider>
           } />
+          <Route path='/SignUp/step3-Teacher' element={
+            <DataTest.Provider value={DataForm}> 
+              <SignStep3Teacher setDataForm={setDataForm} />
+            </DataTest.Provider>
+          } />
           <Route path='/SignUp/step3' element={
             <DataTest.Provider value={DataForm}> 
-              <SignStep3 setDataForm={setDataForm} />
+              <SignStep3Teacher setDataForm={setDataForm} />
             </DataTest.Provider>
+          } />
+          <Route path='/otpValidation' element={
+            <DataTest.Provider value={DataForm}> 
+            <OtpValidation setDataForm={setDataForm} />
+          </DataTest.Provider>
           } />
        </Routes>
       </>
