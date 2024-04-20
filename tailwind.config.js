@@ -1,17 +1,20 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ], theme: {
-    extend: {
+  /** @type {import('tailwindcss').Config} */
+  export default {
+    content: [
+      "./index.html",
+      "./src/**/*.{js,ts,jsx,tsx}",
       
-      fontFamily: {
-        customFont: ["Ubuntu"],
-        // Add more custom font families as needed
+    ]
+    , important: "#root"
+    , theme: {
+      extend: {
+        
+        fontFamily: {
+          customFont: ["Ubuntu"],
+          // Add more custom font families as needed
+        },
       },
     },
-  },
-  plugins: [],
-}
+    plugins: [],
+  }
 

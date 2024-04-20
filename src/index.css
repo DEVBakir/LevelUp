@@ -6,3 +6,14 @@
     box-sizing: border-box;
     font-family: Ubuntu !important;
 }
+:root {
+    font-size: 13px;
+}
+.fff::after {
+    content: "";
+    width: 500px;
+    height: 500px;
+    background-color: red;
+    position: absolute;
+    top: 500px;
+}
